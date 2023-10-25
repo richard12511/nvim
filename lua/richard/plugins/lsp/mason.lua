@@ -31,7 +31,6 @@ return {
         "html",
         "cssls",
         "gopls",
-        "ocamllsp",
         "rust_analyzer",
         "tailwindcss",
         "svelte",
