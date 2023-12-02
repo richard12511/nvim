@@ -24,5 +24,9 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('n', '<C-u>', '<C-w>h', { desc = 'Switch to left split' })
 vim.keymap.set('n', '<C-i>', '<C-w>l', { desc = 'Switch to right split' })
 
-
+-- Window Management
+local opts = { noremap = true, silent = true }
+vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { noremap = true, silent = true})
+vim.keymap.set('n', '<leader>sh', ':split<CR>', { noremap = true, silent = true})
+--vim.keymap.set('n', '<leader>sm', ':MaximizerToggle<CR>', { noremap = true, silent = true})
 
