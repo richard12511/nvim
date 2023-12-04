@@ -13,16 +13,16 @@ local config = function ()
 		},
 		pickers = {
 			find_files = {
-				--theme = "dropdown",
+				theme = "dropdown",
 				previewer = false,
 				hidden = true,
 			},
 			live_grep = {
-				--theme = "dropdown",
+				theme = "dropdown",
 				previewer = false,
 			},
 			find_buffers = {
-				--theme = "dropdown",
+				theme = "dropdown",
 				previewer = false,
 			}
 		},
