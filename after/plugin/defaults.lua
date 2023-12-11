@@ -30,7 +30,7 @@ local km = vim.keymap
 --keymap.set("n", "<leader>mf", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 -- [[ Basic Keymaps ]]
-
+km.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Keymaps for better default experience
 -- See `:help km.set()`
 -- Remap for dealing with word wrap
