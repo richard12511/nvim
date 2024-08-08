@@ -35,7 +35,8 @@ require("lazy").setup({
   spec = {
     -- add your plugins here
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-    { 'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = { 'nvim-lua/plenary.nvim' }}
+    { 'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = { 'nvim-lua/plenary.nvim' }},
+    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
@@ -55,3 +56,11 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
+-- Setup Treesitter
+local configs = require("nvim-treesitter.configs")
+configs.setup({
+	ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
+      	sync_install = false,
+        highlight = { enable = true },
+        indent = { enable = true },  
+})
