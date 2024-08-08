@@ -34,7 +34,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     -- add your plugins here
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { 'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = { 'nvim-lua/plenary.nvim' }}
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
@@ -46,4 +47,11 @@ require("lazy").setup({
 -- Setup Colorscheme
 require("catppuccin").setup()
 vim.cmd.colorscheme("catppuccin")
+
+-- Setup Telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+vim.keymap.set('n', '<C-g>', builtin.live_grep, {})
+vim.keymap.set('n', '<C-b>', builtin.buffers, {})
+vim.keymap.set('n', '<C-h>', builtin.help_tags, {})
 
