@@ -2,7 +2,8 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.opt.number = true
 vim.opt.relativenumber = true
-
+vim.opt.tabstop = 2        -- Number of spaces that a <Tab> in the file counts for
+vim.opt.shiftwidth = 2     -- Number of spaces to use for each step of (auto)indent
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
@@ -36,7 +37,17 @@ require("lazy").setup({
     -- add your plugins here
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     { 'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = { 'nvim-lua/plenary.nvim' }},
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
+    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+		{
+			"nvim-neo-tree/neo-tree.nvim",
+			branch = "v3.x",
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+				"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+				"MunifTanjim/nui.nvim",
+				-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+			}
+		}
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
