@@ -4,6 +4,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.tabstop = 2        -- Number of spaces that a <Tab> in the file counts for
 vim.opt.shiftwidth = 2     -- Number of spaces to use for each step of (auto)indent
+vim.opt.scrolloff = 10
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
@@ -35,16 +36,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
 		{ import = "plugins" },
-    -- add your plugins here
---nvim    { 'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = { 'nvim-lua/plenary.nvim' }},
-  },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
+	},
   install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
-
-
--- Setup Treesitter
--- Setup Neotree
