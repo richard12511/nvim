@@ -14,6 +14,10 @@ vim.opt.ignorecase = true -- Case insensitive searching unless \C or one or more
 vim.opt.smartcase = true
 vim.opt.cursorline = true -- Show which line your cursor is on
 vim.opt.signcolumn = 'yes'
+
+-- Set highlight on search, but allows you to remove highlight quickly by pressing escape
+vim.opt.hlsearch = true
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 -- Keybinds to make split navigation easier.
