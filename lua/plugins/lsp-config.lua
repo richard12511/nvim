@@ -31,6 +31,8 @@ return {
 				},
 			})
 			lspconfig.tsserver.setup({})
+			lspconfig.elp.setup({})
+			lspconfig.elixirls.setup({})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
