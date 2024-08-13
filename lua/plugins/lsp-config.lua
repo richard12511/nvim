@@ -31,8 +31,13 @@ return {
 				},
 			})
 			lspconfig.tsserver.setup({})
-			lspconfig.elp.setup({})
-			lspconfig.elixirls.setup({})
+			--lspconfig.elp.setup({})
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			lspconfig.elixirls.setup({
+				cmd = { "elixir-ls" },
+				-- set default capabilities for cmp lsp completion source
+				capabilities = capabilities,
+			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
