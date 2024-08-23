@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "elp", "elixirls", "tsserver"},
+				ensure_installed = { "lua_ls", "elp", "elixirls", "tsserver" },
 			})
 		end,
 	},
@@ -37,6 +37,16 @@ return {
 				cmd = { "elixir-ls" },
 				-- set default capabilities for cmp lsp completion source
 				capabilities = capabilities,
+			})
+
+			lspconfig.tailwindcss.setup({
+				init_options = {
+					userLanguages = {
+						elixir = "html-eex",
+						eelixir = "html-eex",
+						heex = "html-eex",
+					},
+				},
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
