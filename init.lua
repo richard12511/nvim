@@ -1,3 +1,4 @@
+-- Non plugin based
 require("keymaps")
 require("options")
 
