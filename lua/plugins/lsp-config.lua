@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "elp", "elixirls", "ts_ls" },
+				ensure_installed = { "lua_ls", "elp", "elixirls", "pyright" },
 			})
 		end,
 	},
@@ -30,7 +30,7 @@ return {
 					},
 				},
 			})
-			lspconfig.tsserver.setup({})
+			-- lspconfig.tsserver.setup({})
 			--lspconfig.elp.setup({})
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			lspconfig.elixirls.setup({
